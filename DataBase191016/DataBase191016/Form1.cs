@@ -1,4 +1,4 @@
-﻿using Oracle.DataAccess.Client;
+﻿using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,7 +19,7 @@ namespace DataBase191016
             //SQL문 작성
             oracleCommand1.CommandText = "SELECT * FROM MEMO_TABLE";
             oracleCommand2.CommandText = "SELECT * FROM MEMO_TABLE WHERE M_ID = :PARAM";
-            oracleCommand3.CommandText = "INSERT INTO MEMO_TABLE VALUES (memo_seq.nextval, :aa, :bb, :cc)";
+            oracleCommand3.CommandText = "INSERT INTO MEMO_TABLE VALUES (memo_seq.nextval, :PARAM, :PARAM, :PARAM)";
             //시스템 시간을 받아오는 select문
             oracleCommand4.CommandText = "SELECT SYSDATE FROM DUAL";
 
@@ -48,7 +48,7 @@ namespace DataBase191016
 
             while (rdr.Read())
             {
-                content.Text = rdr["M_date"].ToString() + "\r\n" + rdr["M_CONTENTS"].ToString();
+                content.Text = rdr["M_KEYWORD"].ToString() + "\r\n" + rdr["M_date"].ToString() + "\r\n" + rdr["M_CONTENTS"].ToString();
             }
                 
             rdr.Close();
@@ -61,9 +61,9 @@ namespace DataBase191016
             //서버 시간을 current_time에 저장
             current_time = Convert.ToDateTime(oracleCommand4.ExecuteScalar());
 
-            oracleCommand3.Parameters["aa"].Value = title_tb.Text;
-            oracleCommand3.Parameters["bb"].Value = current_time.ToString();
-            oracleCommand3.Parameters["cc"].Value = content_tb.Text;
+            oracleCommand3.Parameters[0].Value = title_tb.Text;
+            oracleCommand3.Parameters[1].Value = current_time.ToString();
+            oracleCommand3.Parameters[2].Value = content_tb.Text;
 
             //전달된 parameter로 insert문 실행
             oracleCommand3.ExecuteNonQuery();

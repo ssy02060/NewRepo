@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Oracle.DataAccess.Client.OracleParameter oracleParameter5 = new Oracle.DataAccess.Client.OracleParameter();
-            Oracle.DataAccess.Client.OracleParameter oracleParameter1 = new Oracle.DataAccess.Client.OracleParameter();
-            Oracle.DataAccess.Client.OracleParameter oracleParameter6 = new Oracle.DataAccess.Client.OracleParameter();
-            Oracle.DataAccess.Client.OracleParameter oracleParameter7 = new Oracle.DataAccess.Client.OracleParameter();
+            Oracle.ManagedDataAccess.Client.OracleParameter oracleParameter1 = new Oracle.ManagedDataAccess.Client.OracleParameter();
+            Oracle.ManagedDataAccess.Client.OracleParameter oracleParameter2 = new Oracle.ManagedDataAccess.Client.OracleParameter();
+            Oracle.ManagedDataAccess.Client.OracleParameter oracleParameter3 = new Oracle.ManagedDataAccess.Client.OracleParameter();
+            Oracle.ManagedDataAccess.Client.OracleParameter oracleParameter4 = new Oracle.ManagedDataAccess.Client.OracleParameter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.content_tb = new System.Windows.Forms.TextBox();
@@ -40,15 +40,15 @@
             this.title_tb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.view_list_btn = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.view_content_btn = new System.Windows.Forms.Button();
             this.content = new System.Windows.Forms.TextBox();
-            this.oracleCommand1 = new Oracle.DataAccess.Client.OracleCommand();
-            this.oracleConnection1 = new Oracle.DataAccess.Client.OracleConnection();
-            this.oracleCommand2 = new Oracle.DataAccess.Client.OracleCommand();
-            this.oracleCommand3 = new Oracle.DataAccess.Client.OracleCommand();
-            this.oracleCommand4 = new Oracle.DataAccess.Client.OracleCommand();
+            this.view_content_btn = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.view_list_btn = new System.Windows.Forms.Button();
+            this.oracleCommand1 = new Oracle.ManagedDataAccess.Client.OracleCommand();
+            this.oracleConnection1 = new Oracle.ManagedDataAccess.Client.OracleConnection();
+            this.oracleCommand2 = new Oracle.ManagedDataAccess.Client.OracleCommand();
+            this.oracleCommand3 = new Oracle.ManagedDataAccess.Client.OracleCommand();
+            this.oracleCommand4 = new Oracle.ManagedDataAccess.Client.OracleCommand();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -58,10 +58,11 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Location = new System.Drawing.Point(14, 15);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(508, 353);
+            this.tabControl1.Size = new System.Drawing.Size(581, 441);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -71,27 +72,30 @@
             this.tabPage1.Controls.Add(this.save_memo_btn);
             this.tabPage1.Controls.Add(this.title_tb);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(500, 327);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage1.Size = new System.Drawing.Size(573, 412);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "메모입력";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // content_tb
             // 
-            this.content_tb.Location = new System.Drawing.Point(8, 46);
+            this.content_tb.Location = new System.Drawing.Point(9, 58);
+            this.content_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.content_tb.Multiline = true;
             this.content_tb.Name = "content_tb";
-            this.content_tb.Size = new System.Drawing.Size(464, 259);
+            this.content_tb.Size = new System.Drawing.Size(530, 323);
             this.content_tb.TabIndex = 4;
             // 
             // next_memo_btn
             // 
-            this.next_memo_btn.Location = new System.Drawing.Point(284, 17);
+            this.next_memo_btn.Location = new System.Drawing.Point(325, 21);
+            this.next_memo_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.next_memo_btn.Name = "next_memo_btn";
-            this.next_memo_btn.Size = new System.Drawing.Size(75, 23);
+            this.next_memo_btn.Size = new System.Drawing.Size(86, 29);
             this.next_memo_btn.TabIndex = 3;
             this.next_memo_btn.Text = "다음메모";
             this.next_memo_btn.UseVisualStyleBackColor = true;
@@ -99,9 +103,10 @@
             // 
             // save_memo_btn
             // 
-            this.save_memo_btn.Location = new System.Drawing.Point(203, 17);
+            this.save_memo_btn.Location = new System.Drawing.Point(232, 21);
+            this.save_memo_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.save_memo_btn.Name = "save_memo_btn";
-            this.save_memo_btn.Size = new System.Drawing.Size(75, 23);
+            this.save_memo_btn.Size = new System.Drawing.Size(86, 29);
             this.save_memo_btn.TabIndex = 2;
             this.save_memo_btn.Text = "메모저장";
             this.save_memo_btn.UseVisualStyleBackColor = true;
@@ -109,17 +114,18 @@
             // 
             // title_tb
             // 
-            this.title_tb.Location = new System.Drawing.Point(53, 19);
+            this.title_tb.Location = new System.Drawing.Point(61, 24);
+            this.title_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.title_tb.Name = "title_tb";
-            this.title_tb.Size = new System.Drawing.Size(144, 21);
+            this.title_tb.Size = new System.Drawing.Size(164, 25);
             this.title_tb.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 22);
+            this.label1.Location = new System.Drawing.Point(7, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.Size = new System.Drawing.Size(52, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "키워드";
             // 
@@ -129,50 +135,55 @@
             this.tabPage2.Controls.Add(this.view_content_btn);
             this.tabPage2.Controls.Add(this.listBox1);
             this.tabPage2.Controls.Add(this.view_list_btn);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(500, 327);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage2.Size = new System.Drawing.Size(573, 412);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "메모리스트";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // view_list_btn
+            // content
             // 
-            this.view_list_btn.Location = new System.Drawing.Point(357, 22);
-            this.view_list_btn.Name = "view_list_btn";
-            this.view_list_btn.Size = new System.Drawing.Size(75, 23);
-            this.view_list_btn.TabIndex = 0;
-            this.view_list_btn.Text = "리스트보기";
-            this.view_list_btn.UseVisualStyleBackColor = true;
-            this.view_list_btn.Click += new System.EventHandler(this.view_list_btn_Click);
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(17, 22);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(322, 88);
-            this.listBox1.TabIndex = 1;
+            this.content.Location = new System.Drawing.Point(19, 165);
+            this.content.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.content.Multiline = true;
+            this.content.Name = "content";
+            this.content.Size = new System.Drawing.Size(367, 202);
+            this.content.TabIndex = 3;
             // 
             // view_content_btn
             // 
-            this.view_content_btn.Location = new System.Drawing.Point(357, 51);
+            this.view_content_btn.Location = new System.Drawing.Point(408, 64);
+            this.view_content_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.view_content_btn.Name = "view_content_btn";
-            this.view_content_btn.Size = new System.Drawing.Size(75, 23);
+            this.view_content_btn.Size = new System.Drawing.Size(86, 29);
             this.view_content_btn.TabIndex = 2;
             this.view_content_btn.Text = "내용보기";
             this.view_content_btn.UseVisualStyleBackColor = true;
             this.view_content_btn.Click += new System.EventHandler(this.view_content_btn_Click);
             // 
-            // content
+            // listBox1
             // 
-            this.content.Location = new System.Drawing.Point(17, 132);
-            this.content.Multiline = true;
-            this.content.Name = "content";
-            this.content.Size = new System.Drawing.Size(322, 162);
-            this.content.TabIndex = 3;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 15;
+            this.listBox1.Location = new System.Drawing.Point(19, 28);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(367, 109);
+            this.listBox1.TabIndex = 1;
+            // 
+            // view_list_btn
+            // 
+            this.view_list_btn.Location = new System.Drawing.Point(408, 28);
+            this.view_list_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.view_list_btn.Name = "view_list_btn";
+            this.view_list_btn.Size = new System.Drawing.Size(86, 29);
+            this.view_list_btn.TabIndex = 0;
+            this.view_list_btn.Text = "리스트보기";
+            this.view_list_btn.UseVisualStyleBackColor = true;
+            this.view_list_btn.Click += new System.EventHandler(this.view_list_btn_Click);
             // 
             // oracleCommand1
             // 
@@ -181,27 +192,33 @@
             // 
             // oracleConnection1
             // 
-            this.oracleConnection1.ConnectionString = "Data Source=ORARA;User ID=A5293638;Password=san9yun2;";
+            this.oracleConnection1.ConnectionString = "DATA SOURCE=ORARA;USER ID=A5293638;PASSWORD=san9yun2;";
+            this.oracleConnection1.Credential = null;
+            this.oracleConnection1.KeepAlive = false;
+            this.oracleConnection1.KeepAliveInterval = 6;
+            this.oracleConnection1.KeepAliveTime = 60;
+            this.oracleConnection1.TnsAdmin = null;
+            this.oracleConnection1.WalletLocation = null;
             // 
             // oracleCommand2
             // 
             this.oracleCommand2.Connection = this.oracleConnection1;
-            oracleParameter5.OracleDbType = Oracle.DataAccess.Client.OracleDbType.Varchar2;
-            this.oracleCommand2.Parameters.Add(oracleParameter5);
+            oracleParameter1.OracleDbType = Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            this.oracleCommand2.Parameters.Add(oracleParameter1);
             this.oracleCommand2.Transaction = null;
             // 
             // oracleCommand3
             // 
             this.oracleCommand3.Connection = this.oracleConnection1;
-            oracleParameter1.OracleDbType = Oracle.DataAccess.Client.OracleDbType.Varchar2;
-            oracleParameter1.ParameterName = "aa";
-            oracleParameter6.OracleDbType = Oracle.DataAccess.Client.OracleDbType.Varchar2;
-            oracleParameter6.ParameterName = "bb";
-            oracleParameter7.OracleDbType = Oracle.DataAccess.Client.OracleDbType.Varchar2;
-            oracleParameter7.ParameterName = "cc";
-            this.oracleCommand3.Parameters.Add(oracleParameter1);
-            this.oracleCommand3.Parameters.Add(oracleParameter6);
-            this.oracleCommand3.Parameters.Add(oracleParameter7);
+            oracleParameter2.OracleDbType = Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            oracleParameter2.ParameterName = "aa";
+            oracleParameter3.OracleDbType = Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            oracleParameter3.ParameterName = "bb";
+            oracleParameter4.OracleDbType = Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            oracleParameter4.ParameterName = "cc";
+            this.oracleCommand3.Parameters.Add(oracleParameter2);
+            this.oracleCommand3.Parameters.Add(oracleParameter3);
+            this.oracleCommand3.Parameters.Add(oracleParameter4);
             this.oracleCommand3.Transaction = null;
             // 
             // oracleCommand4
@@ -211,10 +228,11 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(555, 397);
+            this.ClientSize = new System.Drawing.Size(634, 496);
             this.Controls.Add(this.tabControl1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
@@ -240,11 +258,11 @@
         private System.Windows.Forms.TextBox content;
         private System.Windows.Forms.Button view_content_btn;
         private System.Windows.Forms.ListBox listBox1;
-        private Oracle.DataAccess.Client.OracleCommand oracleCommand1;
-        private Oracle.DataAccess.Client.OracleConnection oracleConnection1;
-        private Oracle.DataAccess.Client.OracleCommand oracleCommand2;
-        private Oracle.DataAccess.Client.OracleCommand oracleCommand3;
-        private Oracle.DataAccess.Client.OracleCommand oracleCommand4;
+        private Oracle.ManagedDataAccess.Client.OracleCommand oracleCommand1;
+        private Oracle.ManagedDataAccess.Client.OracleConnection oracleConnection1;
+        private Oracle.ManagedDataAccess.Client.OracleCommand oracleCommand2;
+        private Oracle.ManagedDataAccess.Client.OracleCommand oracleCommand3;
+        private Oracle.ManagedDataAccess.Client.OracleCommand oracleCommand4;
     }
 }
 
